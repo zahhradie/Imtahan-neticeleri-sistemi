@@ -7,7 +7,6 @@ namespace ImtahanSistemi
 
         public string GetGrade()
         {
-            // Qiymətləndirmə meyarları
             if (Score >= 91) return "A (Əla)";
             if (Score >= 81) return "B (Çox yaxşı)";
             if (Score >= 71) return "C (Yaxşı)";
