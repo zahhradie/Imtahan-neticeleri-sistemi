@@ -76,5 +76,38 @@ namespace ImtahanSistemi
 
     public class Teacher : Person 
     {
+        private string _kafedra;
+        private string _vezife;
+
+        public string GetKafedra()
+        {
+            return _kafedra;
+        }
+
+        public void SetKafedra(string kafedra)
+        {
+            if (string.IsNullOrWhiteSpace(kafedra) == false)
+            {
+                _kafedra = kafedra.Trim();
+            }
+        }
+
+        public string GetVezife()
+        {
+            return _vezife;
+        }
+
+        public void SetVezife(string vezife)
+        {
+            if (string.IsNullOrWhiteSpace(vezife) == false)
+            {
+                _vezife = vezife.Trim();
+            }
+        }
+
+        public string GetTeacherDetails()
+        {
+            return TamAd() + " (" + _vezife + ") - Kafedra: " + _kafedra;
+        }
     }
 }
