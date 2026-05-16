@@ -49,24 +49,24 @@ namespace ImtahanSistemi
             Console.WriteLine("Sistemdəki Toplam Teacher Sayı: " + db.GetTeacherCount());
 
             Console.WriteLine("ŞAGİRD İMTAHAN NƏTİCƏLƏRİ");
-            foreach (var s in db.GetAllStudents())
+            foreach (Student s in db.GetAllStudents())
             {
                 Console.WriteLine("Şagird: " + s.TamAd() + " | Email: " + s.GetEmail());
-                foreach (var r in s.GetNeticeler())
+                foreach (Result r in s.GetNeticeler())
                 {
                     Console.WriteLine("  -> İmtahan: " + r.GetExamName() + " (ID: " + r.GetExamId() + ")");
                     Console.WriteLine("     Tarix: " + r.GetExamDate().ToString("dd.MM.yyyy") + " | Daxil Edilən Bal: " + r.GetScore() + " | Qiymət: " + r.GetGrade());
                 }
             }
 
-            Console.WriteLine("\n TEACHER İMTAHAN NƏTİCƏLƏRİ");
-            foreach (var t in db.GetAllTeachers())
+            Console.WriteLine("\n TEACHER İMTAHAN NƏTİCƏLƏRİ ");
+            foreach (Teacher t in db.GetAllTeachers())
             {
                 Console.WriteLine("Teacher: " + t.TamAd());
-                foreach (var r in t.GetNeticeler())
+                foreach (Result r in t.GetNeticeler())
                 {
-                    Console.WriteLine("İmtahan: " + r.GetExamName() + " (ID: " + r.GetExamId() + ")");
-                    Console.WriteLine("Tarix: " + r.GetExamDate().ToString("dd.MM.yyyy") + " | Giriş Balı: " + r.GetScore() + " | Düsturla Yekun: " + r.Hesabla() + " | Qiymət: " + r.GetGrade());
+                    Console.WriteLine("  -> İmtahan: " + r.GetExamName() + " (ID: " + r.GetExamId() + ")");
+                    Console.WriteLine("     Tarix: " + r.GetExamDate().ToString("dd.MM.yyyy") + " | Giriş Balı: " + r.GetScore() + " | Düsturla Yekun: " + r.Hesabla() + " | Qiymət: " + r.GetGrade());
                 }
             }
         }
